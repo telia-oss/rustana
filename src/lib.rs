@@ -15,7 +15,7 @@ pub struct GrafanaClient {
 }
 
 fn get_dashboard_by_id(base_url: &str, token: &str, _id: &str) -> Result<RootInterface, Box<Error>>  {
-    let url = format!("{}{}{}", base_url, "/dashboards/uid/", _id);
+    let url = format!("{}{}{}", base_url, "/api/dashboards/uid/", _id);
     let client = Client::new();
     let res: RootInterface = client.get(&url)
         .header("Authorization", format!("{} {}", "Bearer", token))
@@ -27,7 +27,7 @@ fn get_dashboard_by_id(base_url: &str, token: &str, _id: &str) -> Result<RootInt
 }
 
 fn create_or_update_dashboard(base_url: &str, token: &str, dashboard: RootInterface) -> Result<MutateDashboardResponse, Box<Error>> {
-    let url = format!("{}{}", base_url, "/dashboards/db/");
+    let url = format!("{}{}", base_url, "/api/dashboards/db/");
     let client = Client::new();
     let res: MutateDashboardResponse = client.post(&url)
         .header("Authorization", format!("{} {}", "Bearer", token))
@@ -43,6 +43,13 @@ impl GrafanaClient {
         GrafanaClient {
             url: url,
             token: token,
+        }
+    }
+
+    pub fn get_dashboard_by_id(&mut self, _id: &str) -> Result<RootInterface, Box<Error>> {
+        match get_dashboard_by_id(self.url, self.token, _id) {
+            Ok(res) => Ok(res),
+            Err(e) => Err(e)
         }
     }
 
