@@ -187,10 +187,10 @@ pub struct Yaxis {
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct MutateDashboardResponse {
-    id: i64,
-    slug: String,
-    status: String,
-    uid: String,
-    url: String,
-    version: i64
+    pub id: i64,
+    pub slug: String,
+    pub status: String,
+    pub uid: String,
+    pub url: String,
+    pub version: i64
 }
