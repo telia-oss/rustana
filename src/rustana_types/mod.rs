@@ -10,13 +10,17 @@ pub struct Annotations {
 pub struct Dashboard {
     pub annotations: Option<Annotations>,
     pub editable: bool,
-    pub gnetId: Value,
-    pub graphTooltip: Option<i64>,
-    pub hideControls: Option<bool>,
+    #[serde(rename = "gnetId")]
+    pub gnet_id: Value,
+    #[serde(rename = "graphTooltip")]
+    pub graph_tooltip: Option<i64>,
+    #[serde(rename = "hideControls")]
+    pub hide_controls: Option<bool>,
     pub id: i64,
     pub links: Option<Vec<Value>>,
     pub panels: Vec<Panels>,
-    pub schemaVersion: i64,
+    #[serde(rename = "schemaVersion")]
+    pub schema_version: i64,
     pub style: Option<String>,
     pub tags: Option<Vec<Value>>,
     pub templating: Option<Annotations>,
@@ -30,7 +34,8 @@ pub struct Dashboard {
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Dimensions {
-    FunctionName: String,
+    #[serde(rename = "FunctionName")]
+    function_name: String,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -54,11 +59,13 @@ pub struct Legend {
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct List {
-    builtIn: i64,
+    #[serde(rename = "builtIn")]
+    built_in: i64,
     datasource: String,
     enable: bool,
     hide: bool,
-    iconColor: String,
+    #[serde(rename = "iconColor")]
+    icon_color: String,
     name: String,
     #[serde(rename = "type")]
     _type: String,
@@ -68,52 +75,72 @@ pub struct List {
 pub struct Meta {
     #[serde(rename = "type")]
     _type: String,
-    canSave: bool,
-    canEdit: bool,
-    canAdmin: bool,
-    canStar: bool,
+    #[serde(rename = "canSave")]
+    can_save: bool,
+    #[serde(rename = "canEdit")]
+    can_edit: bool,
+    #[serde(rename = "canAdmin")]
+    can_admin: bool,
+    #[serde(rename = "canStar")]
+    can_star: bool,
     slug: String,
     url: String,
     expires: String,
     created: String,
     updated: String,
-    updatedBy: String,
-    createdBy: String,
+    #[serde(rename = "updatedBy")]
+    updated_by: String,
+    #[serde(rename = "createdBy")]
+    created_by: String,
     version: i64,
-    hasAcl: bool,
-    isFolder: bool,
-    folderId: i64,
-    folderTitle: String,
-    folderUrl: String,
+    #[serde(rename = "hasAcl")]
+    has_acl: bool,
+    #[serde(rename = "isFolder")]
+    is_folder: bool,
+    #[serde(rename = "folderId")]
+    folder_id: i64,
+    #[serde(rename = "folderTitle")]
+    folder_title: String,
+    #[serde(rename = "folderUrl")]
+    folder_url: String,
     provisioned: bool,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Panels {
-    aliasColors: Option<Value>,
+    #[serde(rename = "aliasColors")]
+    alias_colors: Option<Value>,
     bars: Option<bool>,
-    dashLength: Option<i64>,
+    #[serde(rename = "dashLength")]
+    dash_length: Option<i64>,
     dashes: Option<bool>,
     datasource: Option<String>,
     fill: Option<i64>,
-    gridPos: Option<GridPos>,
+    #[serde(rename = "gridPos")]
+    grid_pos: Option<GridPos>,
     id: Option<i64>,
     legend: Option<Legend>,
     lines: Option<bool>,
     linewidth: Option<i64>,
-    nullPointMode: Option<String>,
+    #[serde(rename = "nullPointMode")]
+    null_point_mode: Option<String>,
     percentage: Option<bool>,
     pointradius: Option<i64>,
     points: Option<bool>,
     renderer: Option<String>,
-    seriesOverrides: Option<Vec<Value>>,
-    spaceLength: Option<i64>,
+    #[serde(rename = "seriesOverrides")]
+    series_overrides: Option<Vec<Value>>,
+    #[serde(rename = "spaceLength")]
+    space_length: Option<i64>,
     stack: Option<bool>,
-    steppedLine: Option<bool>,
+    #[serde(rename = "steppedLine")]
+    stepped_line: Option<bool>,
     targets: Option<Vec<Targets>>,
     thresholds: Option<Vec<Value>>,
-    timeFrom: Option<Value>,
-    timeShift: Option<Value>,
+    #[serde(rename = "timeFrom")]
+    time_from: Option<Value>,
+    #[serde(rename = "timeShift")]
+    time_shift: Option<Value>,
     title: Option<String>,
     tooltip: Option<Tooltip>,
     #[serde(rename = "type")]
@@ -132,11 +159,14 @@ pub struct RootInterface {
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Targets {
     dimensions: Dimensions,
-    highResolution: bool,
-    metricName: String,
+    #[serde(rename = "highResolution")]
+    high_resolution: bool,
+    #[serde(rename = "metricName")]
+    metric_name: String,
     namespace: String,
     period: String,
-    refId: String,
+    #[serde(rename = "refId")]
+    ref_id: String,
     region: String,
     statistics: Vec<String>,
 }
@@ -173,7 +203,8 @@ pub struct Xaxis {
 pub struct Yaxes {
     format: String,
     label: Value,
-    logBase: i64,
+    #[serde(rename = "logBase")]
+    log_base: i64,
     max: Value,
     min: Value,
     show: bool,
@@ -182,7 +213,8 @@ pub struct Yaxes {
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Yaxis {
     align: bool,
-    alignLevel: Value,
+    #[serde(rename = "alignLevel")]
+    align_level: Value,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
