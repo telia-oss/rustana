@@ -1,5 +1,7 @@
 ## Rustana is a client for Grafana
 
+[API documentation](https://docs.rs/rustana/0.0.2/rustana/)
+
 # Installation
 Rustana is available on [crates.io](https://crates.io/crates/rustana). To use Rustana in your Rust program built with Cargo, add it as a dependency.
 
