@@ -1,8 +1,10 @@
 [package]
 name = "rustana"
-version = "0.1.0"
-authors = ["Mohamad al moualem <m.almouallem@gmail.com>"]
+version = "0.0.1"
+authors = ["telia-oss"]
 edition = "2018"
+description = """
+license = "MIT"
 
 [dependencies]
 reqwest = "0.9.16"
