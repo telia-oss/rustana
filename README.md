@@ -1,11 +1,11 @@
 ## Rustana is a client for Grafana
 
 # Installation
-Rustana is no available on crates.io ye. To use Rustana in your Rust program built with Cargo, add it as a dependency.
+Rustana is available on [crates.io](https://crates.io/crates/rustana). To use Rustana in your Rust program built with Cargo, add it as a dependency.
 
 ```toml
 [dependencies]
-rustana = { git = "https://github.com/telia-oss/rustana.git", tag = "0.0.1" }
+rustana = "0.0.2"
 ```
 
 # Usage
