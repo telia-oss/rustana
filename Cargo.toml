@@ -3,7 +3,7 @@ name = "rustana"
 version = "0.0.1"
 authors = ["telia-oss"]
 edition = "2018"
-description = """
+description = " "
 license = "MIT"
 
 [dependencies]
