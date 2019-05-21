@@ -1,7 +1,7 @@
 [package]
 name = "rustana"
 version = "0.0.1"
-authors = ["telia-oss"]
+authors = ["telia-oss <mohamad.al-mouallem@telia.no>"]
 edition = "2018"
 description = " "
 license = "MIT"
