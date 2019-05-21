@@ -5,6 +5,10 @@ authors = ["telia-oss <m.almouallem@gmail.com>"]
 edition = "2018"
 description = " "
 license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/telia-oss/rustana"
+repository = "https://github.com/telia-oss/rustana"
+keywords = ["Grafana"]
 
 [dependencies]
 reqwest = "0.9.16"
